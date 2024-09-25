@@ -1,36 +1,39 @@
 # Machine-Learning-2024-Winter-Intern-task2
-# Data Preprocessing
-The code includes data preprocessing steps such as:
+# Data Science Project: Booking Status Prediction
+# Overview
+This project aims to predict the booking status of hotel reservations using machine learning algorithms. The dataset is processed, cleaned, and analyzed to build models that can accurately classify whether a booking will be successful or not.
 
-- Checking for null values and data types.
-- Removing leading/trailing whitespaces.
-- Filling missing values using median (for numeric) and mode (for categorical).
-- Outlier Detection
-- Outliers are handled using two methods:
+# Contents
+Data preprocessing
+Outlier detection and removal
+Feature normalization
+Dimensionality reduction using PCA
+Model building and evaluation (KNN and Logistic Regression)
+Visualization of results
+# Technologies Used
+Python
+Pandas
+NumPy
+Seaborn
+Matplotlib
+Scikit-learn
+SciPy
+# Dataset
+The dataset used in this project is first inten project.csv. It contains various features related to hotel bookings, including:
 
-# Interquartile Range 
-- IQR
-- Z-Score
-- Both methods are implemented to ensure robust data cleaning.
+Booking ID
+Date of reservation
+Type of meal
+Room type
+Market segment type
+Booking status (the target variable)
 
-# Feature Engineering
-- A correlation matrix is computed to evaluate relationships between features.
-- Categorical features are transformed using Label Encoding to prepare for modeling.
-# Modeling
-Two machine learning models are implemented:
-
-- Random Forest Classifier
-- K-Nearest Neighbors (KNN)
-# Model performance is evaluated using accuracy, confusion matrices, and classification reports.
-
-# Results
-- Random Forest Accuracy (without dropping):  0.8721094856064181
-- KNN Accuracy (without dropping):  0.8357715903728173
-- Random Forest Accuracy (with dropping): 0.8681284743668931
-- KNN Accuracy (with dropping): 0.8411056207535516
-
-
-# Output Differences
-- Without Dropping Constant Columns: The model may include irrelevant features, which can lead to overfitting or reduced performance.
-- With Dropping Constant Columns: The models generally show improved accuracy and robustness by focusing only on informative features.
-  # By comparing both versions, users can observe how dropping constant columns impacts model performance.
+# Methodology
+Data Loading: The dataset is loaded into a pandas DataFrame.
+Data Preprocessing: This includes handling missing values, encoding categorical variables, and feature engineering (date conversion).
+Outlier Detection: Outliers are identified and removed using the IQR method.
+Train-Validation-Test Split: The dataset is split into training, validation, and test sets.
+Feature Scaling: Features are standardized using StandardScaler.
+Dimensionality Reduction: PCA is applied to reduce the dimensionality of the feature space while retaining 95% variance.
+Model Training: KNN and Logistic Regression models are trained and evaluated on the validation set.
+Model Evaluation: Models are assessed using accuracy, confusion matrix, and classification reports.
